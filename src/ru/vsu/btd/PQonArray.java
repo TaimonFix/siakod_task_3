@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PQonArray implements PriorityQueue {
 
-    private static class Node {
+    private class Node {
         int value;
         int priority;
 
@@ -74,13 +74,15 @@ public class PQonArray implements PriorityQueue {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size - i - 1; j++) {
                 if (arr.get(j).priority < arr.get(j).priority) {
-                    int tmp = arr.get(j).value;
-                    arr.get(j).value = arr.get(j + 1).value;
-                    arr.get(j + 1).value = tmp;
+                    int value1 = arr.get(j).value;
+                    int value2 = arr.get(j + 1).value;
+                    arr.get(j + 1).value = value1;
+                    arr.get(j).value = value2;
 
-                    tmp = arr.get(j).priority;
-                    arr.get(j).priority = arr.get(j + 1).priority;
-                    arr.get(j + 1).priority = tmp;
+                    int priority1 = arr.get(j).priority;
+                    int priority2 = arr.get(j + 1).priority;
+                    arr.get(j + 1).priority = priority1;
+                    arr.get(j).priority = priority2;
 
                 }
             }

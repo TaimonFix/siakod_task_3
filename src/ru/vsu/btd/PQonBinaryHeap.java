@@ -2,10 +2,10 @@ package ru.vsu.btd;
 
 import java.util.ArrayList;
 
-public class PQonBinaryHeap implements PriorityQueue {
+public class PQonBinaryHeap  implements PriorityQueue {
 
 
-    private static class Node {
+    private  class Node {
         int value;
         int priority;
 
@@ -97,6 +97,11 @@ public class PQonBinaryHeap implements PriorityQueue {
             siftDown(parent);
         }
     }
-
+    public void printHeap() {
+        for (int i = 0; i < size; i++) {
+            Node value = heap.get(i);
+            System.out.println(value.value + " " + value.priority);
+        }
+    }
 
 }

@@ -1,10 +1,11 @@
 package ru.vsu.btd;
 
+
 public interface PriorityQueue {
 
-    void insert(int value, int priority);
+    public void insert(int value, int priority);
 
-    int extractMax();
+    public int extractMax();
 
-    void increase(int value, int priority);
+    public void increase(int value, int priority);
 }
